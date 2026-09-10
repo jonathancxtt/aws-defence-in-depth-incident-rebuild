@@ -1,0 +1,15 @@
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+crash.log
+
+# Lambda zip
+*.zip
+
+# Secrets
+*.env
+*.pem
+*.key
