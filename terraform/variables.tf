@@ -1,7 +1,7 @@
 variable "project_name" {
     type = string
     description = "The name of the project"
-    default = "aws-defence-in-depth-incident-rebuild"
+    default = "aws-defence"
 }
 
 variable "aws_region" {
