@@ -10,15 +10,15 @@ data "aws_iam_policy_document" "lambda_trust_policy" {
 
 data "aws_iam_policy_document" "lambda_permissions_policy" {
   statement {
-    sid = "DynamoDBAccess"
-    effect = "Allow"
+    sid       = "DynamoDBAccess"
+    effect    = "Allow"
     actions   = ["dynamodb:PutItem"]
     resources = [aws_dynamodb_table.submissions.arn]
   }
   statement {
-    sid = "CloudWatchLogsAccess"
-    effect = "Allow"
-    actions = ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
+    sid       = "CloudWatchLogsAccess"
+    effect    = "Allow"
+    actions   = ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
     resources = ["arn:aws:logs:*:*:*"]
   }
 }
@@ -34,6 +34,6 @@ resource "aws_iam_policy" "lambda_permissions_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_permissions_policy_attachment" {
-    role = aws_iam_role.lambda_execution_role.name
-    policy_arn = aws_iam_policy.lambda_permissions_policy.arn
+  role       = aws_iam_role.lambda_execution_role.name
+  policy_arn = aws_iam_policy.lambda_permissions_policy.arn
 }
