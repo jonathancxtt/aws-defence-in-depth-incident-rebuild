@@ -40,7 +40,6 @@ def lambda_handler(event, context):
             },
             "body": json.dumps({
                 "message": "Failed to create item",
-                "error": str(e)
+                "error": str(e) 
             })
         }
-    
